@@ -1,0 +1,201 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    /* Centrer le texte */
+    text-align: center;
+
+    /* Couleurs et padding */
+    background-color: #333; /* Couleur de fond par défaut */
+    color: white; /* Couleur du texte */
+    padding: 100px 0;
+
+    /* Image de fond */
+    background-image: url('images/cr=t_0\,w_100.webp');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ajuster pour couvrir tout l'espace du header */
+    background-position: center; /* Centrer l'image */
+
+    /* Superposition pour améliorer la lisibilité */
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Superposition sombre */
+    z-index: 1; /* Place la superposition au-dessus de l'image */
+}
+
+header h1 {
+    position: relative; /* Assure que le texte soit au-dessus de la superposition */
+    z-index: 2;
+    font-size: 2.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+#gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Carte */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: #666;
+}
+.card.hide{
+    display: none;
+}
+
+
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.card .card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-content {
+    opacity: 1;
+}
+
+.card:hover img {
+    opacity: 1;
+}
+
+.card-content h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.card-content p {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+#filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+#filters {
+    display: flex;
+    background-color: #04142d;
+    padding: 10px;
+    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.1);
+}
+
+#filters button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0 15px;
+    border-bottom: 2px solid transparent;
+}
+
+#filters button.active {
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
+}
+
+#filters button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFD700;
+}
